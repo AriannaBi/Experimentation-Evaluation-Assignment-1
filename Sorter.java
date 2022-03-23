@@ -5,8 +5,13 @@ interface Sorter<T extends Comparable<T>> {
 
 	public static void main(String[] args) {
         BubbleSortWhileNeeded bs = new BubbleSortWhileNeeded();
-        final ArrayList<T> T = new ArrayList<T>();
-        bs.sort();
+        Integer[] arr = new Integer[20];
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] = 4;
+		}
+		System.out.println(arr);
+        bs.sort(arr);
+		System.out.println(arr);
 
         
     }
