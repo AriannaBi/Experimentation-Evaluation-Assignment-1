@@ -20,6 +20,11 @@ public class Main{
 
     public static void main(String[] args) {
         String s = generatedString();
+        int n = 100;
+        String[] f = new String[n];
+        for (int i = 0; i < n; i++) {
+            f[i] = generatedString();
+        }
         System.out.println(s);
     }
     
