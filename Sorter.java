@@ -30,8 +30,16 @@ interface Sorter<T extends Comparable<T>> {
 		float[] timeA3 = new float[12];
 
 		testWhileNeeded(allInteger, allString, timeA1);
+		testUntilNoChange(allInteger, allString, timeA2);
+		testPassPerItem(allInteger, allString, timeA3);
 
 		for (float m : timeA1) {
+			System.out.println(m);
+		}
+		for (float m : timeA2) {
+			System.out.println(m);
+		}
+		for (float m : timeA3) {
 			System.out.println(m);
 		}
 
@@ -42,7 +50,9 @@ interface Sorter<T extends Comparable<T>> {
 
 	public static void testWhileNeeded(Integer[][] allInteger, String[][] allString, float[] timeA1) {
 		int j = 0;
-		// warm up
+		// ----Warm up
+		whileNeeded.sort(allInteger[0]);
+		// -----
 		for (Integer[] o : allInteger) {
 			float sum  = 0;
 			for (int i = 0; i < iterations; i++) {
@@ -73,19 +83,71 @@ interface Sorter<T extends Comparable<T>> {
 		return;
 	}
 
-	public static void testUntilNoChange(float[] timeA2) {
-		long start = System.nanoTime();
-
-		long end = System.nanoTime();
-		long result = end - start;
+	public static void testUntilNoChange(Integer[][] allInteger, String[][] allString, float[] timeA2) {
+		int j = 0;
+		// ----Warm up
+		untilNoChange.sort(allInteger[0]);
+		// -----
+		for (Integer[] o : allInteger) {
+			float sum  = 0;
+			for (int i = 0; i < iterations; i++) {
+				long start = System.nanoTime();
+				untilNoChange.sort(o);
+				long end = System.nanoTime();
+				long result = end - start;
+				sum += result;
+			}
+			float avg = sum / iterations;
+			timeA2[j] = avg;
+			j += 1;
+		}
+		for (String[] o : allString) {
+			float sum  = 0;
+			for (int i = 0; i < iterations; i++) {
+				long start = System.nanoTime();
+				untilNoChange.sort(o);
+				long end = System.nanoTime();
+				long result = end - start;
+				sum += result;
+			}
+			float avg = sum / iterations;
+			timeA2[j] = avg;
+			j += 1;
+		}
 		return;
 	}
 
-	public static void testPassPerItem(float[] timeA3) {
-		long start = System.nanoTime();
-
-		long end = System.nanoTime();
-		long result = end - start;
+	public static void testPassPerItem(Integer[][] allInteger, String[][] allString, float[] timeA3) {
+		int j = 0;
+		// ----Warm up
+		passPerItem.sort(allInteger[0]);
+		// -----
+		for (Integer[] o : allInteger) {
+			float sum  = 0;
+			for (int i = 0; i < iterations; i++) {
+				long start = System.nanoTime();
+				passPerItem.sort(o);
+				long end = System.nanoTime();
+				long result = end - start;
+				sum += result;
+			}
+			float avg = sum / iterations;
+			timeA3[j] = avg;
+			j += 1;
+		}
+		for (String[] o : allString) {
+			float sum  = 0;
+			for (int i = 0; i < iterations; i++) {
+				long start = System.nanoTime();
+				passPerItem.sort(o);
+				long end = System.nanoTime();
+				long result = end - start;
+				sum += result;
+			}
+			float avg = sum / iterations;
+			timeA3[j] = avg;
+			j += 1;
+		}
 		return;
 	}
 
