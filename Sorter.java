@@ -24,7 +24,11 @@ interface Sorter<T extends Comparable<T>> {
 		// 500 iterations
 		// Warm up 1 cycle
 
-		
+		long start = System.nanoTime();
+
+		long end = System.nanoTime();
+        long result = end - start;
 	}
+
 
 }
