@@ -21,13 +21,39 @@ interface Sorter<T extends Comparable<T>> {
 		String[] j = DataFile.J;
 		String[] k = DataFile.K;
 		String[] l = DataFile.L;
+		Object[] all = {a, b, c, d, e, f, g, h, i, j, k, l};
+		float[] timeA1 = new float[12];
+		float[] timeA2 = new float[12];
+		float[] timeA3 = new float[12];
+
 		// 500 iterations
 		// Warm up 1 cycle
 
+		
+	}
+
+	public static void testWhileNeeded(Object[][] all, float[] timeA1){
 		long start = System.nanoTime();
 
 		long end = System.nanoTime();
         long result = end - start;
+		return;
+	}
+
+	public static void testUntilNoChange(float[] timeA2){
+		long start = System.nanoTime();
+
+		long end = System.nanoTime();
+        long result = end - start;
+		return;
+	}
+
+	public static void testPassPerItem(float[] timeA3){
+		long start = System.nanoTime();
+
+		long end = System.nanoTime();
+        long result = end - start;
+		return;
 	}
 
 
