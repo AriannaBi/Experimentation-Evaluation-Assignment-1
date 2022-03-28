@@ -33,12 +33,15 @@ interface Sorter<T extends Comparable<T>> {
 		testUntilNoChange(allInteger, allString, timeA2);
 		testPassPerItem(allInteger, allString, timeA3);
 
+		System.out.println("A1--------");
 		for (float m : timeA1) {
 			System.out.println(m);
 		}
+		System.out.println("A2--------");
 		for (float m : timeA2) {
 			System.out.println(m);
 		}
+		System.out.println("A3--------");
 		for (float m : timeA3) {
 			System.out.println(m);
 		}
