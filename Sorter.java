@@ -1,5 +1,5 @@
 import java.util.*;
-import DataFile;
+import DataFile.DataFile;
 
 interface Sorter<T extends Comparable<T>> {
 
@@ -7,14 +7,18 @@ interface Sorter<T extends Comparable<T>> {
 	
 	public static void main(String[] args) {
 		BubbleSortWhileNeeded bs = new BubbleSortWhileNeeded();
-		Integer[] arr = new Integer[20];
-		for (int i = 0; i < arr.length; i++) {
-			arr[i] = 4;
-		}
-		System.out.println(arr);
-		bs.sort(arr);
-		System.out.println(arr);
-
+		Integer[] a = DataFile.A;
+		Integer[] b = DataFile.B;
+		Integer[] c = DataFile.C;
+		Integer[] D = DataFile.D;
+		Integer[] e = DataFile.E;
+		Integer[] f = DataFile.F;
+		String[] g = DataFile.G;
+		String[] h = DataFile.H;
+		String[] i = DataFile.I;
+		String[] j = DataFile.J;
+		String[] k = DataFile.K;
+		String[] l = DataFile.L;
 	}
 
 }
