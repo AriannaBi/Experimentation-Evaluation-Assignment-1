@@ -23,26 +23,51 @@ interface Sorter<T extends Comparable<T>> {
 		String[] j = DataFile.J;
 		String[] k = DataFile.K;
 		String[] l = DataFile.L;
-		Object[] all = { a, b, c, d, e, f, g, h, i, j, k, l };
+		Integer[][] allInteger = { a, b, c, d, e, f};
+		String[][] allString = {g, h, i, j, k, l };
 		float[] timeA1 = new float[12];
 		float[] timeA2 = new float[12];
 		float[] timeA3 = new float[12];
+
+		testWhileNeeded(allInteger, allString, timeA1);
+
+		for (float m : timeA1) {
+			System.out.println(m);
+		}
 
 		// 500 iterations
 		// Warm up 1 cycle
 
 	}
 
-	public static void testWhileNeeded(Object[][] all, float[] timeA1) {
-		for (Object o : all) {
-			// warm up
+	public static void testWhileNeeded(Integer[][] allInteger, String[][] allString, float[] timeA1) {
+		int j = 0;
+		// warm up
+		for (Integer[] o : allInteger) {
+			float sum  = 0;
 			for (int i = 0; i < iterations; i++) {
 				long start = System.nanoTime();
 				whileNeeded.sort(o);
 				long end = System.nanoTime();
 				long result = end - start;
-
+				sum += result;
 			}
+			float avg = sum / iterations;
+			timeA1[j] = avg;
+			j += 1;
+		}
+		for (String[] o : allString) {
+			float sum  = 0;
+			for (int i = 0; i < iterations; i++) {
+				long start = System.nanoTime();
+				whileNeeded.sort(o);
+				long end = System.nanoTime();
+				long result = end - start;
+				sum += result;
+			}
+			float avg = sum / iterations;
+			timeA1[j] = avg;
+			j += 1;
 		}
 
 		return;
