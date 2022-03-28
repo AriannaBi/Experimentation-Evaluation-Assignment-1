@@ -6,11 +6,13 @@ interface Sorter<T extends Comparable<T>> {
 	void sort(T[] items);
 	
 	public static void main(String[] args) {
-		BubbleSortWhileNeeded bs = new BubbleSortWhileNeeded();
+		BubbleSortWhileNeeded whileNeeded = new BubbleSortWhileNeeded();
+		BubbleSortUntilNoChange untilNoChange = new BubbleSortUntilNoChange();
+		BubbleSortPassPerItem passPerItem = new BubbleSortPassPerItem();
 		Integer[] a = DataFile.A;
 		Integer[] b = DataFile.B;
 		Integer[] c = DataFile.C;
-		Integer[] D = DataFile.D;
+		Integer[] d = DataFile.D;
 		Integer[] e = DataFile.E;
 		Integer[] f = DataFile.F;
 		String[] g = DataFile.G;
@@ -19,6 +21,10 @@ interface Sorter<T extends Comparable<T>> {
 		String[] j = DataFile.J;
 		String[] k = DataFile.K;
 		String[] l = DataFile.L;
+		// 500 iterations
+		// Warm up 1 cycle
+
+		
 	}
 
 }
