@@ -26,7 +26,7 @@ public class Main{
         // System.out.print("{");
         for (int i = 0; i < n; i++) {
             f[i] = generatedString();
-            // System.out.print(f[i] + ",");
+            // System.out.print("\"" + f[i] + "\",");
             // System.out.print(",");
         }
         // Print the array values in order or reverse order
@@ -35,7 +35,7 @@ public class Main{
         System.out.print("{");
         for (int i = 0; i < n; i++) {
             // f[i] = generatedString();
-            System.out.print(f[i] + ",");
+            System.out.print("\"" + f[i] + "\",");
             // System.out.print(",");
         }
         System.out.print("}");
